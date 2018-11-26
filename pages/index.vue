@@ -31,9 +31,9 @@
     computed: {
       ...mapGetters({
         counter: 'counters/counter',
-        counterA: 'buttonA/counterA',
-        counterB: 'buttonB/counterB',
-        counterC: 'buttonC/counterC',
+        counterA: 'buttons/A/counterA',
+        counterB: 'buttons/B/counterB',
+        counterC: 'buttons/C/counterC',
       })
     },
   }
