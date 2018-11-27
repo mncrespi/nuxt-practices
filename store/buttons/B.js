@@ -3,14 +3,17 @@ export const state = () => ({
 });
 
 export const mutations = {
+  // mutation(state, payload) { code... }
   increment(state) {
     state.counters++
   }
 };
 
 export const actions = {
-  increment({ state, commit, rootState }) {
+  // action(ctx, payload) { code... }
+  increment({ state, commit, dispatch, }) {
     commit('increment')
+    dispatch('counters/increment', { value: 3, }, { root: true })
   }
 };
 

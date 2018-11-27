@@ -3,18 +3,18 @@
     <div>
       <h1>Home</h1>
       <p>Cada boton contabiliza cuantas veces fue presionado.</p>
-      <p>Cada boton boton suma +1 +2 +3 según corresponda al counter global</p>
+      <p>Cada boton boton suma +1 +3 +5 según corresponda al counter global</p>
       <p>Boton de Reset para limpiar todos los contadores</p>
       <p>En los bloques de cada boton, tengo que mostrar el estado de los counters de los otros botones</p>
       <ButtonA />
       <ButtonB />
       <ButtonC />
     </div>
-    <div>
-      <h2>counter: {{ counter }}</h2>
-      <h2>Button A: {{ counterA }}</h2>
-      <h2>Button B: {{ counterB }}</h2>
-      <h2>Button C: {{ counterC }}</h2>
+    <div class="card margin padding">
+      <h2>Button A (+1): {{ counterA }}</h2>
+      <h2>Button B (+3): {{ counterB }}</h2>
+      <h2>Button C (+5): {{ counterC }}</h2>
+      <h2><b>Counter (total): {{ counter }}</b></h2>
     </div>
   </section>
 </template>
@@ -43,5 +43,11 @@
   }
 </script>
 
-<style>
+<style scoped>
+  .margin {
+    margin: 10px;
+  }
+  .padding {
+    padding: 10px;
+  }
 </style>
