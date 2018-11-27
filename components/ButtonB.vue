@@ -11,6 +11,7 @@
 
 <script>
   import { mapGetters, mapActions } from 'vuex'
+  import { BUTTONS_B_INCREMENT } from '../store/action-types'
   export default {
     name: 'ButtonB',
     computed: {
@@ -22,7 +23,7 @@
     },
     methods: {
       ...mapActions({
-        increment: 'buttons/B/increment',
+        increment: BUTTONS_B_INCREMENT,
       }),
     }
   }
