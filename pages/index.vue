@@ -9,6 +9,7 @@
       <ButtonA />
       <ButtonB />
       <ButtonC />
+      <ButtonReset />
     </div>
     <div class="card margin padding">
       <h2>Button A (+1): {{ counterA }}</h2>
@@ -24,6 +25,7 @@
   import ButtonA from '~/components/ButtonA'
   import ButtonB from '~/components/ButtonB'
   import ButtonC from '~/components/ButtonC'
+  import ButtonReset from '~/components/ButtonReset'
 
   export default {
     name: 'Home',
@@ -31,6 +33,7 @@
       ButtonA,
       ButtonB,
       ButtonC,
+      ButtonReset,
     },
     computed: {
       ...mapGetters({
