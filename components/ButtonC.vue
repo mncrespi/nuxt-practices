@@ -4,21 +4,26 @@
       <span class="card-header-icon">
         <button @click="increment" >Button C</button>
       </span>
-      <p class="card-header-title">Count: {{ count }}</p>
+      <p class="card-header-title">CountA: {{ counterA }} CountB: {{ counterB }} CountC: {{ counterC }}</p>
     </header>
   </div>
 </template>
 
 <script>
+  import { mapGetters, mapActions } from 'vuex'
   export default {
     name: 'ButtonB',
-    data: () => ({
-      count: 0,
-    }),
+    computed: {
+      ...mapGetters({
+        counterA: 'buttons/A/counterA',
+        counterB: 'buttons/B/counterB',
+        counterC: 'buttons/C/counterC',
+      })
+    },
     methods: {
-      increment() {
-        this.count ++
-      },
+      ...mapActions({
+        increment: 'buttons/C/increment',
+      }),
     }
   }
 </script>
