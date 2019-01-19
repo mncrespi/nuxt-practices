@@ -1,5 +1,5 @@
 import { ADD, RESET_STORE, } from './mutation-types'
-import { INCREMENT, COUNTERS_INCREMENT, CLEAR_STORE, } from './action-types'
+import { INCREMENT, CLEAR_STORE, } from './action-types'
 
 // Initial State
 const getDefaultState = () => ({

@@ -10,20 +10,25 @@
 </template>
 
 <script>
-  import { mapGetters, mapActions } from 'vuex'
-  import { BUTTONS_C_INCREMENT } from '../store/action-types'
+  import { mapGetters, createNamespacedHelpers } from "vuex";
+  const { mapActions } = createNamespacedHelpers("buttons/C");
+  import { INCREMENT } from "../store/action-types";
   export default {
     name: 'ButtonC',
     computed: {
-      ...mapGetters({
-        counterA: 'buttons/A/counterA',
-        counterB: 'buttons/B/counterB',
-        counterC: 'buttons/C/counterC',
+      ...mapGetters("buttons/A", {
+        counterA: "counter"
+      }),
+      ...mapGetters("buttons/B", {
+        counterB: "counter"
+      }),
+      ...mapGetters("buttons/C", {
+        counterC: "counter"
       })
     },
     methods: {
       ...mapActions({
-        increment: BUTTONS_C_INCREMENT,
+        increment: INCREMENT,
       }),
     }
   }

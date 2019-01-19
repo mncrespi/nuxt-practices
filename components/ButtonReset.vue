@@ -10,16 +10,16 @@
 </template>
 
 <script>
-  import { CLEAR_STORE_A, CLEAR_STORE_B, CLEAR_STORE_C, CLEAR_STORE_COUNTER } from '../store/action-types'
+  import { CLEAR_STORE, } from '../store/action-types'
 
   export default {
     name: 'ButtonReset',
     methods: {
       reset() {
-        this.$store.dispatch(CLEAR_STORE_COUNTER, null, { root: true });
-        this.$store.dispatch(CLEAR_STORE_A, null, { root: true });
-        this.$store.dispatch(CLEAR_STORE_B, null, { root: true });
-        this.$store.dispatch(CLEAR_STORE_C, null, { root: true });
+        this.$store.dispatch(`counters/${CLEAR_STORE}`, null, { root: true });
+        this.$store.dispatch(`buttons/A/${CLEAR_STORE}`, null, { root: true });
+        this.$store.dispatch(`buttons/B/${CLEAR_STORE}`, null, { root: true });
+        this.$store.dispatch(`buttons/C/${CLEAR_STORE}`, null, { root: true });
       }
     }
   }

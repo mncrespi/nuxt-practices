@@ -1,5 +1,5 @@
 import { ADD, RESET_STORE } from '../mutation-types'
-import { CLEAR_STORE, COUNTERS_INCREMENT, INCREMENT } from '../action-types'
+import { CLEAR_STORE, INCREMENT } from '../action-types'
 
 const getDefaultState = () => ({
   counters: 0
@@ -22,7 +22,7 @@ export const actions = {
   // action(ctx, payload) { code... }
   [INCREMENT]({ state, commit, dispatch, }) {
     commit(ADD)
-    dispatch(COUNTERS_INCREMENT, { value: 1, }, { root: true })
+    dispatch(`counters/${INCREMENT}`, { value: 1, }, { root: true })
   },
   [CLEAR_STORE]({ commit }) {
     commit(RESET_STORE)
@@ -30,7 +30,7 @@ export const actions = {
 };
 
 export const getters = {
-  counterA(state) {
+  counter(state) {
     return state.counters
   }
 };
